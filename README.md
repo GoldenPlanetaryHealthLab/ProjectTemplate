@@ -24,6 +24,14 @@ ProjectTemplate/
 
 Use Spack to pin software versions and keep runs reproducible across cluster nodes.
 
+Use `curl` to predict which packages you will need by pinging the Posit Package Manager Repository:
+
+```sh
+curl -X POST "https://packagemanager.posit.co/__api__/repos/4/sysreqs" \
+  -H "Content-Type: application/json" \
+  -d '{"requirements":["sf","igraph","xml2"]}'
+```
+
 ```bash
 # Example workflow (adjust to your local FASRC setup)
 spack env create project-env ./env/spack.yaml
