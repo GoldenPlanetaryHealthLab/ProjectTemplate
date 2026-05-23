@@ -29,7 +29,11 @@ Use `curl` to predict which packages you will need by pinging the Posit Package 
 ```sh
 curl -X POST "https://packagemanager.posit.co/__api__/repos/4/sysreqs" \
   -H "Content-Type: application/json" \
-  -d '{"requirements":["sf","igraph","xml2"]}'
+  -d '{
+    "requirements":["targets","readxl","dplyr","fusen","quarto"],
+    "r_version":"4.5.1",
+    "bioc_version":"3.21"
+  }'
 ```
 
 ```bash
